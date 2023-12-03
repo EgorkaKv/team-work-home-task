@@ -32,9 +32,9 @@ def path(top='', tab=0):
     tab = len(top.place.split('/'))-2
     print(s*tab + top.name + ':')
     for folder in top.folders:
-        path(top=i)
+        path(top=folder)
     for file in top.files:
-        print(s*(tab+1) + i.name)
+        print(s*(tab+1) + file.name)
 
 
 if __name__ == '__main__':
