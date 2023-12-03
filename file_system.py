@@ -6,8 +6,8 @@ class File:
         self.size = size
         self.place = place
 
-    def replace(self, new):
-        self.place = new
+    def replace(self, new_place):
+        self.place = new_place
 
 
 class Folder:
@@ -21,10 +21,10 @@ class Folder:
 
     def replace(self, new='Desktop/'):
         self.place = new
-        for i in self.folders:
-            i.replace(self.place + self.name + '/')
-        for i in self.files:
-            i.replace(self.place + self.name)
+        for folder in self.folders:
+            folder.replace(self.place + self.name + '/')
+        for file in self.files:
+            file.replace(self.place + self.name)
 
 
 def path(top='', tab=0):
@@ -35,10 +35,6 @@ def path(top='', tab=0):
         path(top=i)
     for i in top.files:
         print(s*(tab+1) + i.name)
-
-
-'''def test_pop():
-    assert (1, 2, 3) == (2, 1, 3)'''
 
 
 if __name__ == '__main__':
