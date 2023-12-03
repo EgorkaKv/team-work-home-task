@@ -31,9 +31,9 @@ def path(top='', tab=0):
     s = '    '
     tab = len(top.place.split('/'))-2
     print(s*tab + top.name + ':')
-    for i in top.folders:
+    for folder in top.folders:
         path(top=i)
-    for i in top.files:
+    for file in top.files:
         print(s*(tab+1) + i.name)
 
 
